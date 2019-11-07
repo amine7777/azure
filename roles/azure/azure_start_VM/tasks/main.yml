@@ -1,0 +1,8 @@
+---
+
+- name: "{{ start_vm }}"
+  azure_rm_virtualmachine:
+    resource_group: "{{ resource_group }}"
+    name: "{{ virtual_machine }}"
+  tags:
+   start_vm

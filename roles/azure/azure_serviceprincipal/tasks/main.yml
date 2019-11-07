@@ -1,0 +1,35 @@
+---
+
+- name: verify if you are connected to Microsoft account
+  command: az login
+
+
+- name: create file
+  file:
+    path: ./templates/bla.txt
+    state: touch
+
+- name: create a service principal
+  command: az ad sp create-for-rbac --name {{ServicePrincipalName}} --password {{ServicePrincipalPassword}}
+
+
+
+- name: save subscription id in credentials files
+  shell: az account list --all | grep "id:" &> ./templates/bla.txt
+
+- name: //////////////////////this is a msg ///////////*********************/
+  shell: cat ./templates/credentials.txt
+
+- name: change file
+  command: sed 's/"//g' ./templates/credentials.txt
+
+- name: save subscription id and tenant id
+  command: az account set --subscription "$(< ./templates/credentials.txt)"
+
+- name: save service principal credentials in txt file
+  command: az ad sp list --show-mine --query '[].{"id":"appId", "tenant":"appOwnerTenantId"}' --output json
+
+
+
+  tags:
+    - service_principal

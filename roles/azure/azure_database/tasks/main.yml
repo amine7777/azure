@@ -1,0 +1,8 @@
+---
+- name: Create (or update) PostgreSQL Database
+  azure_rm_postgresqldatabase:
+    resource_group: "{{ resource_group }}"
+    server_name: "{{ psql_server }}"
+    name: db1
+  tags:
+    database

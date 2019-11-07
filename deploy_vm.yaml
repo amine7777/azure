@@ -1,0 +1,18 @@
+---
+
+- hosts: localhost
+  connection: local
+
+
+  vars_files:
+    - "group_vars/irc/irc_{{ env }}"
+
+  roles:
+    - { role: azure/azure_resource_group }
+    - { role: azure/azure_virtual_network }
+    - { role: azure/azure_subnet }
+    - { role: azure/azure_publicIP }
+    - { role: azure/azure_network_security_group }
+    - { role: azure/azure_nic }
+    - { role: azure/azure_virtual_machine }
+    #- { role: azure/azure_serviceprincipal }

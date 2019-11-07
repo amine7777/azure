@@ -1,0 +1,14 @@
+---
+
+- name: Create a network interface card
+  azure_rm_networkinterface:
+   resource_group: "{{ resource_group }}"
+   name: "{{ nic }}"
+   virtual_network: "{{ virtual_network }}"
+   subnet: "{{ subnet }}"
+   public_ip_name: "{{ publicIP }}"
+   security_group: "{{ network_security_group }}"
+
+   state: "{{ state }}"
+  tags:
+    - nic

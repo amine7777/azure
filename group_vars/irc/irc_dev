@@ -1,0 +1,34 @@
+# global variables
+projet: irc
+env: dev
+location: northeurope
+location_short: eus
+key_data: "you need to put your ssh public key here"
+state: present
+
+
+
+
+# resources naming pattern
+root_pattern: "{{ projet }}-{{ env }}-{{ location_short }}"
+#/////--VIRTUAL_MACHINE_Elements--////////#
+resource_group: "{{ root_pattern }}-rg"
+virtual_network: "{{ root_pattern }}-vnet"
+subnet: "{{ root_pattern }}-subnet"
+publicIP: "{{ root_pattern }}-publicIP"
+network_security_group: "{{ root_pattern }}-nsg"
+nic: "{{ root_pattern }}-nic"
+virtual_machine: "{{ root_pattern }}-VM"
+
+
+
+#/////--PostgreSQL--////////#
+psql_server: "{{ root_pattern }}-dbserver"
+database: "{{ root_pattern }}-db"
+
+#/////--Start & Stop virtual machine--////////#
+deallocate_stop: "{{ root_pattern }}-stopvm"
+start_vm: "{{ root_pattern }}-start"
+
+#////---ServicePrincipal---////////#
+ServicePrincipalName: gen-azure

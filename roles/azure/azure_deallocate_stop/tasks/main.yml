@@ -1,0 +1,9 @@
+---
+
+  - name: "{{ deallocate_stop }}"
+    azure_rm_virtualmachine:
+      resource_group: "{{ resource_group }}"
+      name: "{{ virtual_machine }}"
+      allocated: no
+    tags:
+     deallocate_stop

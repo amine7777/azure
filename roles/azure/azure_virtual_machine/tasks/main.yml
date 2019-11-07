@@ -1,0 +1,22 @@
+---
+
+- name: Create a virtual machine
+  azure_rm_virtualmachine:
+   resource_group: "{{ resource_group }}"
+   name: "{{ virtual_machine }}"
+   vm_size: Standard_B1ms
+   admin_username: amine
+   ssh_password_enabled: False
+   ssh_public_keys:
+    - path: "/home/amine/.ssh/authorized_keys"
+      key_data: "{{ key_data }}"
+
+   network_interfaces: "{{ nic }}"
+   image:
+     offer: UbuntuServer
+     publisher: Canonical
+     sku: 16.04-LTS
+     version: latest
+   state: "{{ state }}"
+  tags:
+    - virtual_machine
