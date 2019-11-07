@@ -4,7 +4,7 @@
 **Azure**,  is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers. I made this project to facilitate the use of Azure and Ansible.
 
 
-##Requirements
+## Requirements
 ----------------------------------
 - Azure account
 - OS Centos or Ubuntu
@@ -71,15 +71,15 @@ The folder vm_all contain all the instances in one file.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 
-##Next improvements
+## Next improvements
 ----------------------------------
 - Add load balancer playbook
 - Add VMSS playbook
 
-##Author
+## Author
 ----------------------------------
 - **Amine Kahlaoui**, DevOps engineer
 
-##Acknowlegement
+## Acknowlegement
 ----------------------------------
 You can also create the same thing with Terraform.
