@@ -15,7 +15,7 @@
 ## Installation
 ---------------------------------
 
-First, you need to install [Azure modules](https://www.ansible.com/) on your machine.I presume that azure-cli and Ansible already installed.
+First, you need to install [Azure modules] for Ansible (https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html) on your machine.I presume that azure-cli and Ansible already installed.
 
 ```bash
 pip install ansible[azure]
